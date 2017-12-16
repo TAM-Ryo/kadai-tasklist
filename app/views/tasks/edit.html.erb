@@ -1,2 +1,15 @@
-<h1>id:<%= @task.id %>のタスク編集ページ</h1>
-<%= render 'form', task: @task %>
+<h3>編集</h3>
+
+<%= form_for(@task) do |f| %>
+  <aside class="col-md-4">
+    <div class="form-group">
+      <p>タスク</p>
+      <%= f.text_area :content,class:'form-control',rows:5 %>
+    </div>    
+    <div class="form-group">   
+      <p>ステータス</p>
+      <%= f.text_area :status,class:'form-control',rows:1 %>
+    </div>
+    <%= f.submit 'Post',class:'btn btn-primary btn-block' %>
+  </aside>
+<% end %>
